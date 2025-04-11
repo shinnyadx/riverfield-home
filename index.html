@@ -34,7 +34,19 @@
   <meta http-equiv="Expires" content="0">
 </head>
 <body>
-
+  <script>
+    // LINEで開いたときだけ、OGP画像にキャッシュ破壊のバージョンパラメータを強制付与
+    if(navigator.userAgent.includes('Line')) {
+      const rand = Date.now();
+      history.replaceState({}, '', `?v=${rand}`);
+      document.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]').forEach(meta => {
+        if(meta.content.includes('ogp_image.jpg')) {
+          meta.content = meta.content.split('?')[0] + `?v=${rand}`;
+        }
+      });
+    }
+  </script>
+  
   <!-- ロゴとパスワードフォーム -->
   <div class="logo-container">
     <img src="images/logo.png" alt="リヴァフィルのロゴ" class="logo">
