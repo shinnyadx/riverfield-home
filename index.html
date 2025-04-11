@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>リヴァフィル公式サイト</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="リヴァフィル公式サイト。法律・医療・福祉・動物愛護のメタバース街づくり。">
+  <title>リヴァフィル | 未来を創る共創プロジェクト</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>ようこそ、リヴァフィルへ！</h1>
-  <p>ここは、法と医療と福祉の調和を目指すメタバースタウンです。</p>
+
+  <!-- ロゴとパスワードフォーム -->
+  <div class="logo-container">
+    <img src="RFlogo0.png" alt="リヴァフィルのロゴ" class="logo">
+  </div>
+  
+  <div class="login-container" id="loginContainer">
+    <h2>パスワードを入力してください</h2>
+    <input type="password" id="password" placeholder="パスワード">
+    <button onclick="checkPassword()">ログイン</button>
+  </div>
+
+  <!-- メインページの内容（隠されている） -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <h1>リヴァフィル</h1>
+      <p>未来を創る、共創メタバースプロジェクト</p>
+    </header>
+
+    <nav>
+      <a href="#about">理念</a>
+      <a href="#vision">未来像</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+
+    <div class="hero">
+      <h1>バーチャルの街に、リアルな希望を。</h1>
+    </div>
+
+    <div class="section" id="about">
+      <h2>リヴァフィルとは？</h2>
+      <p>
+        法律・医療・福祉・動物愛護を軸とした、<br>
+        誰もが安心して過ごせる仮想都市を創造するプロジェクトです。
+      </p>
+    </div>
+
+    <div class="section" id="vision">
+      <h2>描く未来</h2>
+      <p>
+        メタバース空間での無料法律相談、<br>
+        遠隔医療・リハビリ、動物との共生社会のモデルを実現します。
+      </p>
+    </div>
+
+    <div class="section" id="contact">
+      <h2>お問い合わせ</h2>
+      <p>info@riverfield.jp</p>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Riverfield Project. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
