@@ -1,31 +1,31 @@
 // パスワードチェック
 function checkPassword() {
   const password = document.getElementById('password').value;
-  
-  // 正しいパスワードを指定（ここでは"password123"）
-  const correctPassword = "password123";
+  const correctPassword = "password123"; // 実際にはより安全な方法を推奨
   
   if (password === correctPassword) {
-    // パスワードが正しい場合、メインページを表示
     document.getElementById('loginContainer').style.display = 'none';
     document.getElementById('mainContent').style.display = 'block';
-    document.body.style.background = '#f9f9f9'; // 背景色を変更
+    document.body.style.background = '#f9f9f9';
+    window.scrollTo(0, 0);
   } else {
-    alert('パスワードが間違っています。もう一度入力してください。');
+    alert('パスワードが間違っています');
+    document.getElementById('password').value = '';
   }
 }
 
-// エンターキーでサブミット（パスワード入力後にエンターでチェック）
+// エンターキーで送信
 document.getElementById("password").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
-    checkPassword(); // エンターキーが押されたらパスワードチェックを実行
+    checkPassword();
   }
 });
 
-// ロゴアニメーション後にログインフォームを表示
+// ロゴ表示後にログインフォームを表示
 window.onload = function() {
   setTimeout(function() {
-    document.querySelector('.logo-container').style.display = 'none'; // ロゴ非表示
-    document.getElementById('loginContainer').style.display = 'block'; // ログインフォーム表示
-  }, 3000);  // ロゴが浮かび上がるアニメーション後に表示
+    document.querySelector('.logo-container').style.display = 'none';
+    document.getElementById('loginContainer').style.display = 'block';
+    document.getElementById('password').focus();
+  }, 3000);
 };
