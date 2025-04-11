@@ -1,29 +1,126 @@
-/* ロゴアニメーション */
+/* ロゴのアニメーション */
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: white; /* 背景を白に変更 */
+  opacity: 0;
+  animation: fadeIn 3s forwards, floatUp 2s ease-in-out forwards;
 }
 
 .logo {
   width: 200px;
-  filter: 
-    drop-shadow(0 0 10px rgba(0,0,0,0.1)) /* 優しい影 */
-    drop-shadow(0 5px 15px rgba(0,0,0,0.3)) /* 浮き出し用の濃い影 */
-    drop-shadow(0 -2px 5px rgba(0,0,0,0.1)); /* 上方にも軽く影 */
-  animation: 
-    fadeIn 1.5s ease-out forwards,
-    floatUp 2s ease-in-out infinite alternate; /* 上下に浮遊するアニメーション */
-}
-
-@keyframes floatUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-15px); }
+  height: auto;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ログインフォーム */
+.login-container {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-container input {
+  padding: 10px;
+  margin: 10px;
+  font-size: 1rem;
+}
+
+.login-container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* メインコンテンツ（初期状態では非表示） */
+.main-content {
+  display: none;
+}
+
+/* メインページスタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #e60012;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #c40010;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1581091012184-7ac3b83c57f2') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.hero h1 {
+  font-size: 3em;
+}
+
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
