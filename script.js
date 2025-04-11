@@ -7,10 +7,8 @@ function checkPassword() {
     document.getElementById('loginContainer').style.display = 'none';
     document.getElementById('mainContent').style.display = 'block';
     document.body.style.background = '#f9f9f9';
-    window.scrollTo(0, 0);
   } else {
     alert('パスワードが間違っています');
-    document.getElementById('password').value = '';
   }
 }
 
@@ -21,11 +19,10 @@ document.getElementById("password").addEventListener("keypress", function(event)
   }
 });
 
-// ロゴ表示後にログインフォームを表示
+// 3秒後にログイン画面表示
 window.onload = function() {
   setTimeout(function() {
     document.querySelector('.logo-container').style.display = 'none';
     document.getElementById('loginContainer').style.display = 'block';
-    document.getElementById('password').focus();
   }, 3000);
 };

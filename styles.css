@@ -1,137 +1,29 @@
-/* リセット & 基本設定 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-
-body {
-  background-color: #f0f0f0;
-  color: #333;
-  line-height: 1.6;
-}
-
 /* ロゴアニメーション */
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #e60012;
-  opacity: 0;
-  animation: fadeIn 2s forwards, floatUp 1.5s ease-out forwards;
+  background-color: white; /* 背景を白に変更 */
 }
 
 .logo {
   width: 200px;
-  height: auto;
-  filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+  filter: 
+    drop-shadow(0 0 10px rgba(0,0,0,0.1)) /* 優しい影 */
+    drop-shadow(0 5px 15px rgba(0,0,0,0.3)) /* 浮き出し用の濃い影 */
+    drop-shadow(0 -2px 5px rgba(0,0,0,0.1)); /* 上方にも軽く影 */
+  animation: 
+    fadeIn 1.5s ease-out forwards,
+    floatUp 2s ease-in-out infinite alternate; /* 上下に浮遊するアニメーション */
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-@keyframes floatUp {
-  from { transform: translateY(30px); }
-  to { transform: translateY(0); }
-}
-
-/* ログインフォーム */
-.login-container {
-  display: none;
-  text-align: center;
-  padding: 30px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  max-width: 400px;
-  margin: 50px auto;
-}
-
-.login-container input {
-  padding: 12px;
-  width: 80%;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.login-container button {
-  padding: 12px 25px;
-  background-color: #e60012;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.login-container button:hover {
-  background-color: #c40010;
-}
-
-/* メインコンテンツ */
-.main-content {
-  display: none;
-}
-
-header {
-  background-color: #e60012;
-  color: white;
-  padding: 30px;
-  text-align: center;
-}
-
-nav {
-  background-color: #c40010;
-  padding: 15px;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 20px;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-              url('https://images.unsplash.com/photo-1581091012184-7ac3b83c57f2') center/cover;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.hero h1 {
-  font-size: 2.5em;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-}
-
-.section {
-  padding: 60px 20px;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2em; }
-  nav a { display: block; margin: 10px 0; }
 }
